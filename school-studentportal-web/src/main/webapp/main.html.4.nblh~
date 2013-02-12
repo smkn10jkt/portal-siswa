@@ -51,8 +51,16 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">History <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#/history/HistoryAbsensi">History Absensi</a></li>
-                                    <li><a href="#/history/HistoryNilai">History Nilai</a></li>
+<<<<<<< HEAD
                                     <li><a href="#/history/HistoryTransaksi">History Transaksi</a></li>
+                                    <li><a href="#/history/HistoryNilai">History Nilai</a></li>
+                                   
+=======
+                                    
+                                    <li><a href="#/history/HistoryTransaksi">History Transaksi</a></li>
+                                    <li><a href="#/history/HistoryNilai">History Nilai</a></li>
+                                 
+>>>>>>> 558c77d551a6d96b7e587050bb700d36f8b8765e
                                     
                                 </ul>
                             </li>
