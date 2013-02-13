@@ -1,39 +1,4 @@
-<div class="span5 well-large">
-    <button type="button" class="btn" data-toggle="collapse" data-target="#search">
-<i class="icon-search"></i>Search
-</button>
-    <div id="search" class="collapse on">
-    <h2>Search History</h2>
-    <form class="form-horizontal" name="formEdit">
-        <div class="control-group" ng-class="{error: formEdit.hari.$invalid}">
-            <label class="control-label" for="hari">Day : &nbsp;</label>
-            <select data-placeholder="-- Select One --">
-                    <option>Monday</option>
-                    <option>Tuesday</option>
-                    <option>Wednesday</option>
-                    <option>Thursday</option>
-                    <option>Friday</option> 
-              </select>
-           <span ng-show="formEdit.hari.$error.required" class="help-inline">Harus diisi</span>
-        </div>
-        <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
-            <label class="control-label" for="tgl">Date : &nbsp;</label>
-            <input id="tgl" type="date" value="auto"  
-                   ng-model="currentHistory.tgl"
-                   required
-                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
-            <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
-           
-        </div>
-        <div class="form-actions">
-            <button type="button" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
-            <button type="reset" class="btn" ng-click="baru()">Batal</button>
-        </div>
-    </form>
-</div>
-    </div>
-
-<div class="span12  well-large">
+<div class="span5  well-large">
     <h2>History Absensi</h2>
     <hr>
     <table class="table table-striped table-condensed table-bordered">
@@ -59,3 +24,28 @@
 
 </div>
     
+
+<div class="span5 well-large">
+    <button type="button" class="btn" data-toggle="collapse" data-target="#search">
+<i class="icon-search"></i>Search
+</button>
+    <div id="search" class="collapse on">
+    <h2>Search History</h2>
+    <form class="form-horizontal" name="formEdit">
+       <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
+            <label class="control-label" for="tgl">Date : &nbsp;</label>
+            <input id="tgl" type="date" value="auto"  
+                   required
+                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
+            <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
+           
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+            <button type="reset" class="btn" ng-click="baru()">Batal</button>
+        </div>
+    </form>
+</div>
+    </div>
+
+
