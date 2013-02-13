@@ -5,6 +5,9 @@ and open the template in the editor.
 <!DOCTYPE html>
 <div class="span5 well-large">
     <h1>History Transaksi</h1>
+    <a class="btn" ng-click="baru()">
+        <i class="icon-plus-sign"></i>Tambah Data
+    </a>
     <hr>
     <table class="table table-striped table-condensed table-bordered">
         <thead>
@@ -55,7 +58,7 @@ and open the template in the editor.
         </div>
         
         <div class="form-actions">
-            <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+            <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Simpan</button>
             <button type="button" class="btn" ng-click="baru()">Batal</button>
         </div>
     </form>

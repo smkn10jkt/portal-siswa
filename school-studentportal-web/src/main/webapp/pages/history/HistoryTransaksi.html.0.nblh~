@@ -40,7 +40,7 @@ and open the template in the editor.
                    ng-model="currentHistory.tgl"
                    required
                    ui-validate="{permissionValueAvailable: isPermissionValueAvailable}">
-            <span ng-show="formEdit.value.$error.required" class="help-inline"></span>
+            <span ng-show="formEdit.value.$error.required" class="help-inline">Harus diisi</span>
            
         </div>
 
@@ -51,7 +51,7 @@ and open the template in the editor.
                    placeholder="Jumlah Bayar" 
                    ng-model="currentHistory.no"
                    required>
-            <span ng-show="formEdit.jbr.$error.required" class="help-inline"></span>
+            <span ng-show="formEdit.jbr.$error.required" class="help-inline">Harus diisi</span>
         </div>
         
         <div class="form-actions">
