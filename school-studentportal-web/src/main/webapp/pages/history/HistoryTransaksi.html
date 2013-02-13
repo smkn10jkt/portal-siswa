@@ -40,14 +40,12 @@ and open the template in the editor.
     <form class="form-horizontal" name="formEdit">
        <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
             <label class="control-label" for="tgl">Tanggal : &nbsp;</label>
-            <input type="text" 
-                   id="tgl" 
-                   name="tgl" 
-                   placeholder="Tanggal" 
+            <input id="tgl" type="date" value="auto"  
                    ng-model="currentHistory.tgl"
                    required
-                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}">
-            <span ng-show="formEdit.value.$error.required" class="help-inline"></span>
+                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
+            <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
+           
            
         </div>
 
