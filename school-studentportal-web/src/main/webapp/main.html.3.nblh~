@@ -37,7 +37,11 @@
                                     <li><a href="#system/config">Konfigurasi Aplikasi</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Ijin Akses</li>
+<<<<<<< HEAD
+                                    <li><a href="#/system/user">Edit Siswa</a></li>
+=======
                                     <li><a href="#/history/editsiswa">Edit Siswa</a></li>
+>>>>>>> 0422b5278707f30b35c86e556b354b950ede3f3b
                                     <li><a href="#/system/user">User</a></li>
                                     <li><a href="#/system/role">Role</a></li>
                                     <li><a href="#/system/permission">Permission</a></li>
