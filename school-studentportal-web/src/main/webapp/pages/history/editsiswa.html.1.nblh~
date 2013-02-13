@@ -5,11 +5,11 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
   <div class="span12 well-large">
-<h1 id="header">Edit Siswa</h1>
+<h1 id="header">Master Student</h1>
 		<div>
 			<ul class="nav nav-tabs">
   <li class="active" id="list"><a href="#list" data-toggle="tab" class="active"><i class="icon-list"></i>Student List</a></li>
-  <li><a href="#new" data-toggle="tab"><i class="icon-plus-sign"></i>Edit Siswa</a></li>
+  <li><a href="#new" data-toggle="tab"><i class="icon-plus-sign"></i>Create New Student</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="list">
