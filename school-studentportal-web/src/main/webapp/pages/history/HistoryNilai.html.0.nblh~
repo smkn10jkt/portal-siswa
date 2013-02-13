@@ -1,10 +1,8 @@
 <html>
  <div class="span5 well-large">
-     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
-<i class="icon-search"></i>Search
-</button>
-    <div id="search" class="collapse on">
     <h1>History Nilai</h1>
+    
+
     <hr>
     <table class="table table-striped table-condensed table-bordered">
         <thead>
@@ -58,7 +56,7 @@
                       <option>Rekayasa Perangkat Lunak</option>
                     <option ng-repeat="role in roles" value="{{role.MP}}">{}}</option>
               </select>
-            <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+            <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Save</button>
             <button type="button" class="btn" ng-click="baru()">Cancel</button>
         </div>
     </form>

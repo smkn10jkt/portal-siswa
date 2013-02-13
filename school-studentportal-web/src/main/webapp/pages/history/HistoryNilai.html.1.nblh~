@@ -1,10 +1,9 @@
 <html>
  <div class="span5 well-large">
-     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
-<i class="icon-search"></i>Search
-</button>
-    <div id="search" class="collapse on">
     <h1>History Nilai</h1>
+    <body background="cd c:\xampp\htdocs\belajar-git\portal-siswa\school-studentportal-web\img\paper.jpg"></body>
+    
+
     <hr>
     <table class="table table-striped table-condensed table-bordered">
         <thead>
