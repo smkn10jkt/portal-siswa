@@ -1,10 +1,5 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
 <div class="span5 well-large">
-    <h1>History Transaksi</h1>
+    <h1>History Fees </h1>
     <hr>
     <table class="table table-striped table-condensed table-bordered">
         <thead>
@@ -28,24 +23,29 @@ and open the template in the editor.
     </table>
 
 </div>
-<button type="button" class="btn" data-toggle="collapse" data-target="#search">
+
+<div class="span5 well-large">
+     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
     <i class="icon-search"></i>Search 
     </button>
     <div id="search" class="collapse on">
-<div class="span5 well-large">
-     
-    <h1>Search History Transaksi</h1>
+    <h1>Search History Fees</h1>
     
     
     <form class="form-horizontal" name="formEdit">
        <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
             <label class="control-label" for="tgl">Tanggal : &nbsp;</label>
+
+            <input type="date" id="tgl"
+                   required
+                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}">
+            <span ng-show="formEdit.tgl.$error.required" class="help-inline"></span>
+
             <input id="tgl" type="date" value="auto"  
                    ng-model="currentHistory.tgl"
                    required
                    ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
             <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
-           
            
         </div>
 
@@ -60,7 +60,6 @@ and open the template in the editor.
         </div>
         
         <div class="form-actions">
-            
             <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
             <button type="button" class="btn" ng-click="baru()">Batal</button>
         </div>
