@@ -36,11 +36,6 @@
        <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
             <label class="control-label" for="tgl">Tanggal : &nbsp;</label>
 
-            <input type="date" id="tgl"
-                   required
-                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}">
-            <span ng-show="formEdit.tgl.$error.required" class="help-inline"></span>
-
             <input id="tgl" type="date" value="auto"  
                    ng-model="currentHistory.tgl"
                    required
