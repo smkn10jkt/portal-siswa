@@ -1,9 +1,8 @@
-<div class="span5 well-large">
+<html>
+ <div class="span5 well-large">
     <h1>History Nilai</h1>
+    
 
-    <a class="btn" ng-click="baru()">
-        <i class="icon-plus-sign"></i>Tambah Data
-    </a>
     <hr>
     <table class="table table-striped table-condensed table-bordered">
         <thead>
@@ -43,17 +42,20 @@
         </div>
         <div class="control-group" ng-class="{error: formEdit.value.$invalid}">
             <label class="control-label" for="MP">Mata Pelajaran : &nbsp;</label>
-            <input type="combobox" id="matapelajaran"
-                   id="matapelajaran" 
-                   name="MP" 
-                   placeholder="MataPelajaran" 
-                   ng-model="currentPermission.MP"
-                   required
-                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}">
-            <span ng-show="formEdit.value.$error.required" class="help-inline">Harus diisi</span>
-            <span ng-show="formEdit.value.$error.permissionValueAvailable" class="help-inline">sudah ada yang pakai</span>
-        </div>
-        <div class="form-actions">
+                  <select ui-select2 ng-model="currentUser.role.MP" data-placeholder="-- Daftar Pelajaran --">
+                      <option>Agama</option>
+                      <option>Bahasa Indonesia</option>
+                      <option>Bahasa Inggris</option>
+                      <option>Biologi</option>
+                      <option>Fisika</option>
+                      <option>Kimia</option>
+                      <option>Matematika</option>
+                      <option>IPS</option>
+                      <option>Penjaskes</option>
+                      <option>Seni Budaya</option>
+                      <option>RPL(kejuruan)</option>
+                    <option ng-repeat="role in roles" value="{{role.MP}}">{}}</option>
+              </select>
             <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Simpan</button>
             <button type="button" class="btn" ng-click="baru()">Batal</button>
         </div>
