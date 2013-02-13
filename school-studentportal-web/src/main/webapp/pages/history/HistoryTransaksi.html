@@ -1,6 +1,5 @@
-
 <div class="span5 well-large">
-    <h1>History Transaksi</h1>
+    <h1>History Fees </h1>
     <hr>
     <table class="table table-striped table-condensed table-bordered">
         <thead>
@@ -36,19 +35,17 @@
     <form class="form-horizontal" name="formEdit">
        <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
             <label class="control-label" for="tgl">Tanggal : &nbsp;</label>
-<<<<<<< HEAD
+
             <input type="date" id="tgl"
                    required
                    ui-validate="{permissionValueAvailable: isPermissionValueAvailable}">
             <span ng-show="formEdit.tgl.$error.required" class="help-inline"></span>
-=======
+
             <input id="tgl" type="date" value="auto"  
                    ng-model="currentHistory.tgl"
                    required
                    ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
             <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
-           
->>>>>>> b9249017f962c0b4352836802cbf90d1f9b34298
            
         </div>
 
@@ -63,7 +60,6 @@
         </div>
         
         <div class="form-actions">
-            
             <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
             <button type="button" class="btn" ng-click="baru()">Batal</button>
         </div>
