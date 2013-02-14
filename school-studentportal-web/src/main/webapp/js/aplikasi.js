@@ -16,6 +16,7 @@ angular.module('belajar', ['ui', 'belajar.controller'])
             .when('/history/HistoryTransaksi', {templateUrl: 'pages/history/HistoryTransaksi.html'})
             .when('/history/HistoryNilai', {templateUrl: 'pages/history/HistoryNilai.html'})
             .when('/history/editsiswa', {templateUrl: 'pages/history/editsiswa.html'})
+            .when('/list/school', {templateUrl: 'pages/list/school.html'})
             .when('/about', {templateUrl: 'pages/about.html', controller: 'AboutController'})
             .otherwise({templateUrl: 'pages/404.html'});
     }])

@@ -56,7 +56,6 @@
 							</select>
 						</div>
 				<div class="control-group" ng-class="{error: formEdit.nis.$invalid}">
-                                      <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
 					<label class="control-label" for="nis">NIS : &nbsp;</label>
 					<input type="text" id="nis" name="nis" placeholder="NIS" ng-model="currentPermission.value"required
 		ui-validate="{permissionValueAvailable: isPermissionValueAvailable}">
