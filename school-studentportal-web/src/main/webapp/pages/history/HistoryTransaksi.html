@@ -1,3 +1,40 @@
+<div class="span5 well-large">
+     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
+    <i class="icon-search"></i>Search 
+    </button>
+    <div id="search" class="collapse on">
+    <h1>Search History Transaksi</h1>
+    
+    
+    <form class="form-horizontal" name="formEdit">
+       <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
+            <label class="control-label" for="tgl">Tanggal : &nbsp;</label>
+
+            <input id="tgl" type="date" value="auto"  
+                   ng-model="currentHistory.tgl"
+                   required
+                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
+            <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
+           
+        </div>
+
+<!--         <div class="control-group" ng-class="{error: formEdit.jbr.$invalid}">
+            <label class="control-label" for="jbr">Jumlah Pembayaran : &nbsp;</label>
+            <input type="text" id="Jumlah Pembayaran" 
+                   name="jpr" 
+                   placeholder="Jumlah Pembayaran" 
+                   ng-model="currentHistory.no"
+                   required>
+            <span ng-show="formEdit.jbr.$error.required" class="help-inline"></span>
+        </div>-->
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+            <button type="button" class="btn" ng-click="baru()">Batal</button>
+        </div>
+        </div>
+</div>
+
 <div class="span8 well-large">
     <h1>History Transaksi </h1>
     <hr>
@@ -30,40 +67,4 @@
 
 </div>
 
-<div class="span5 well-large">
-     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
-    <i class="icon-search"></i>Search 
-    </button>
-    <div id="search" class="collapse on">
-    <h1>Search History Transaksi</h1>
-    
-    
-    <form class="form-horizontal" name="formEdit">
-       <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
-            <label class="control-label" for="tgl">Tanggal : &nbsp;</label>
-
-            <input id="tgl" type="date" value="auto"  
-                   ng-model="currentHistory.tgl"
-                   required
-                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
-            <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
-           
-        </div>
-
-         <div class="control-group" ng-class="{error: formEdit.jbr.$invalid}">
-            <label class="control-label" for="jbr">Jumlah Pembayaran : &nbsp;</label>
-            <input type="text" id="Jumlah Pembayaran" 
-                   name="jpr" 
-                   placeholder="Jumlah Pembayaran" 
-                   ng-model="currentHistory.no"
-                   required>
-            <span ng-show="formEdit.jbr.$error.required" class="help-inline"></span>
-        </div>
-        
-        <div class="form-actions">
-            <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
-            <button type="button" class="btn" ng-click="baru()">Batal</button>
-        </div>
-        </div>
-</div>
 
