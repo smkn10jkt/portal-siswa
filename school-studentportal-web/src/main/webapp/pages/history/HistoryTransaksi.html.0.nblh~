@@ -1,4 +1,4 @@
-<div class="span8 well-large">
+<div class="span6 well-large">
     <h1>History Transaksi </h1>
     <hr>
     <table class="table table-striped table-condensed table-bordered">
@@ -7,7 +7,6 @@
                 <th>Tanggal Pembayaran</th>
                 <th>Jenis Pembayaran</th>
                 <th>Jumlah Pembayaran</th>
-                <th>Jumlah Bayar</th>
                 <th>Tagihan</th>
                 <th>Keterangan</th>
             </tr>
@@ -16,8 +15,7 @@
             <tr ng-repeat="x in permissions">
                 <td>{{x.Tanggal}}</td>
                 <td>{{x.Pembayaran}}</td>
-                <td>{{x.Jumah Pembayaran}}</td>
-                <td>{{x.Jumlah Bayar}}</td>
+                <td>{{x.Jumah Bayar}}</td>
                 <td>{{x.Tagihan}}</td>
                 <td>{{x.Keterangan}}</td>
                 <td>
@@ -51,10 +49,10 @@
         </div>
 
          <div class="control-group" ng-class="{error: formEdit.jbr.$invalid}">
-            <label class="control-label" for="jbr">Jumlah Pembayaran : &nbsp;</label>
-            <input type="text" id="Jumlah Pembayaran" 
-                   name="jpr" 
-                   placeholder="Jumlah Pembayaran" 
+            <label class="control-label" for="jbr">Jumlah Bayar : &nbsp;</label>
+            <input type="text" id="Jumlah Bayar" 
+                   name="jbr" 
+                   placeholder="Jumlah Bayar" 
                    ng-model="currentHistory.no"
                    required>
             <span ng-show="formEdit.jbr.$error.required" class="help-inline"></span>
@@ -66,4 +64,3 @@
         </div>
         </div>
 </div>
-
