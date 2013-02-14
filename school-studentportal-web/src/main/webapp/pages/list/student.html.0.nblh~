@@ -56,14 +56,12 @@
 							</select>
 						</div>
 				<div class="control-group" ng-class="{error: formEdit.nis.$invalid}">
-                                      <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
 					<label class="control-label" for="nis">NIS : &nbsp;</label>
 					<input type="text" id="nis" name="nis" placeholder="NIS" ng-model="currentPermission.value"required
 		ui-validate="{permissionValueAvailable: isPermissionValueAvailable}">
 					<span ng-show="formEdit.nis.$error.required" class="help-inline">required</span>
 					<span ng-show="formEdit.nis.$error.permissionValueAvailable" class="help-inline">Already exist</span>
 				</div>
-                                    <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
 		<div class="control-group" ng-class="{error: formEdit.nisn.$invalid}">
 					<label class="control-label" for="nisn">NISN : &nbsp;</label>
 					<input type="text" id="nisn" name="nisn" placeholder="NISN" ng-model="currentPermission.value"required
