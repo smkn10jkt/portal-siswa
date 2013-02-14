@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portal Siswa</title>
-        
+        <img src="C:\xampp\htdocs\belajar-git\portal-siswa\school-studentportal-web\target\school-studentportal-web-1.0-SNAPSHOT\img\anigif.gif" />
 
         <!-- css orang lain -->
         <link rel="stylesheet" href="css/jquery-ui.min.css">

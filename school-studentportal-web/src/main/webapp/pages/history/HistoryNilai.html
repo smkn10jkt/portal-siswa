@@ -5,16 +5,23 @@
         <thead>
             <tr>
                 <th>Nomor Ujian</th>
-                <th>Tanggal Ujian</th>
-                <th>Mata Pelajaran</th>
-                <th>Nilai</th>
-                <th>Keterangan</th>
+                <th>Pertanyaan ke-</th>
+                <th>Durasi</th>
+                <th>Jawaban Anda</th>
+                <th>Jawaban Yang Benar</th>
+                <th>KKM</th>
+                <th>Hasil Ujian</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="x in permissions">
-                <td>{{x.label}}</td>
-                <td>{{x.value}}</td>
+                <td>{{x.NU}}</td>
+                <td>{{x.PK}}</td>
+                <td>{{x.D}}</td>
+                <td>{{x.JA}}</td>
+                <td>{{x.JYB}}</td>
+                <td>{{x.KKM}}</td>
+                <td>{{x.HU}}</td>
                 <td>
                     <a ng-click="edit(x)"><i class="icon-edit"></i></a>
                     <a ng-click="remove(x)"><i class="icon-remove"></i></a>
@@ -33,33 +40,16 @@
     <h1>Search</h1>
     <form class="form-horizontal" name="formEdit">
         <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
-            <label class="control-label" for="TU">Tanggal Ujian : &nbsp;</label>
-            <input type="datetime"
-                   name="TU" 
-                   placeholder="TanggalUjian" 
-                   ng-model="currentPermission.TU"
+            <label class="control-label" for="NU">Nomor Ujian : &nbsp;</label>
+            <input type="text" 
+                   id="NU"
+                   name="NU" 
+                   placeholder="NomorUjian" 
+                   ng-model="currentPermission.NU"
                    required>
             <span ng-show="formEdit.label.$error.required" class="help-inline">Harus diisi</span>
         </div>
-        <div class="control-group" ng-class="{error: formEdit.value.$invalid}">
-            <label class="control-label" for="MP">Mata Pelajaran : &nbsp;</label>
-                  <select ui-select2 ng-model="currentUser.role.MP" data-placeholder="Select One">
-                      <option>Agama</option>
-                      <option>Bahasa Indonesia</option>
-                      <option>Bahasa Inggris</option>
-                      <option>Ilmu Pengetahuan Alam</option>
-                      <option>Fisika</option>
-                      <option>Kimia</option>
-                      <option>Matematika</option>
-                      <option>Ilmu Pengetahuan Sosial</option>
-                      <option>Penjaskes</option>
-                      <option>Seni Budaya</option>
-                      <option>Rekayasa Perangkat Lunak</option>
-                    <option ng-repeat="role in roles" value="{{role.MP}}">{}}</option>
-              </select>
-            <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
-            <button type="button" class="btn" ng-click="baru()">Cancel</button>
-        </div>
+       
     </form>
 </div>
         
