@@ -1,3 +1,35 @@
+<div class="span8 well-large">
+    <h1>History Transaksi </h1>
+    <hr>
+    <table class="table table-striped table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Tanggal Pembayaran</th>
+                <th>Jenis Pembayaran</th>
+                <th>Jumlah Pembayaran</th>
+                <th>Jumlah Bayar</th>
+                <th>Tagihan</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+<tbody>
+            <tr ng-repeat="x in permissions">
+                <td>{{x.Tanggal}}</td>
+                <td>{{x.Pembayaran}}</td>
+                <td>{{x.Jumah Pembayaran}}</td>
+                <td>{{x.Jumlah Bayar}}</td>
+                <td>{{x.Tagihan}}</td>
+                <td>{{x.Keterangan}}</td>
+                <td>
+                    <a ng-click="edit(x)"><i class="icon-edit"></i></a>
+                    <a ng-click="remove(x)"><i class="icon-remove"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
 <div class="span5 well-large">
      <button type="button" class="btn" data-toggle="collapse" data-target="#search">
     <i class="icon-search"></i>Search 
@@ -34,37 +66,4 @@
         </div>
         </div>
 </div>
-
-<div class="span8 well-large">
-    <h1>History Transaksi </h1>
-    <hr>
-    <table class="table table-striped table-condensed table-bordered">
-        <thead>
-            <tr>
-                <th>Tanggal Pembayaran</th>
-                <th>Jenis Pembayaran</th>
-                <th>Jumlah Pembayaran</th>
-                <th>Jumlah Bayar</th>
-                <th>Tagihan</th>
-                <th>Keterangan</th>
-            </tr>
-        </thead>
-<tbody>
-            <tr ng-repeat="x in permissions">
-                <td>{{x.Tanggal}}</td>
-                <td>{{x.Pembayaran}}</td>
-                <td>{{x.Jumah Pembayaran}}</td>
-                <td>{{x.Jumlah Bayar}}</td>
-                <td>{{x.Tagihan}}</td>
-                <td>{{x.Keterangan}}</td>
-                <td>
-                    <a ng-click="edit(x)"><i class="icon-edit"></i></a>
-                    <a ng-click="remove(x)"><i class="icon-remove"></i></a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-</div>
-
 
