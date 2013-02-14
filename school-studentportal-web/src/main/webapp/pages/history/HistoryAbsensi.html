@@ -1,35 +1,9 @@
-<div class="span5  well-large">
-    <h2>History Absensi</h2>
-    <hr>
-    <table class="table table-striped table-condensed table-bordered">
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Date</th>
-                <th>Keterangan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="x in historyabsen">
-                <td>{{x.hari}}</td>
-                <td>{{x.tgl}}</td>
-                <td>{{x.ket}}</td>
-                <td>
-                    <a ng-click="edit(x)"><i class="icon-edit"></i></a>
-                    <a ng-click="remove(x)"><i class="icon-remove"></i></a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-</div>
-    
-<div class="span5 well-large">
+<div class="span12 well-large">
     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
 <i class="icon-search"></i>Search
 </button>
     <div id="search" class="collapse on">
-    <h2>Search History</h2>
+    <h1>Search History</h1>
     <form class="form-horizontal" name="formEdit">
        <div class="control-group" ng-class="{error: formEdit.tgl.$invalid}">
             <label class="control-label" for="tgl">Date : &nbsp;</label>
@@ -46,5 +20,59 @@
     </form>
 </div>
     </div>
+<div class="span5  well-large">
+    <h2>History Kehadiran</h2>
+    <hr>
+    <table class="table table-striped table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Masuk</th>
+                <th>Pulang</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in historyabsen">
+                <td>{{x.tgl}}</td>
+                <td>{{x.masuk}}</td>
+                <td>{{x.pulang}}</td>
+                <td>{{x.keterangan}}</td>
+                <td>
+                    <a ng-click="edit(x)"><i class="icon-edit"></i></a>
+                    <a ng-click="remove(x)"><i class="icon-remove"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="span5  well-large">
+    <h2>History Ketidakhadiran</h2>
+    <hr>
+    <table class="table table-striped table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in historyabsen">
+                <td>{{x.tgl}}</td>
+                <td>{{x.keterangan}}</td>
+                <td>
+                    <a ng-click="edit(x)"><i class="icon-edit"></i></a>
+                    <a ng-click="remove(x)"><i class="icon-remove"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+    
+
+
 
 
