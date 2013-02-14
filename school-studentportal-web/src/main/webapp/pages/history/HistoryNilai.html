@@ -49,8 +49,10 @@
                    required>
             <span ng-show="formEdit.label.$error.required" class="help-inline">Harus diisi</span>
         </div>
-       
+       <div class="form-actions">
+            <button type="submit" class="btn btn-primary" ng-click="cari()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+            <button type="reset" class="btn" ng-click="baru()">Cancel</button>
+        </div>
     </form>
 </div>
-        
-    
+

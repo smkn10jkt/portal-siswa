@@ -1,14 +1,82 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+ <div class="span5 well-large">
+     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
+<i class="icon-search"></i>Search
+</button>
+    <div id="search" class="collapse on">
+    <h1>Rekap Harian</h1>
+    <hr>
+    <table class="table table-striped table-condensed table-bordered">
+        <thead>a
+            <tr>
+                <th>NIS</th>
+                <th>Nama</th>
+                <th>Kelas</th>
+                <th>Jam Masuk</th>
+                <th>Jam Keluar</th>
+                <th>Lama</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in permissions">
+                <td>{{x.label}}</td>
+                <td>{{x.value}}</td>
+                <td>
+                    <a ng-click="edit(x)"><i class="icon-edit"></i></a>
+                    <a ng-click="remove(x)"><i class="icon-remove"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="span5 well-large">
+    <h1>Search Rekap Harian</h1>
+    <form class="form-horizontal" name="formEdit">
+        <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
+            <label class="control-label" for="TU">Dari : &nbsp;</label>
+            <input type="datetime"
+                   name="TU" 
+                   placeholder="Dari" 
+                   ng-model="currentPermission.TU"
+                   required>
+            <span ng-show="formEdit.label.$error.required" class="help-inline">Harus diisi</span>
+        </div>
+        <div class="control-group" ng-class="{error: formEdit.value.$invalid}">
+            <label class="control-label" for="MP">Sampai : &nbsp;</label>
+                  <select ui-select2 ng-model="currentUser.role.MP" data-placeholder="Select One">
+                      <option>00-01</option>
+                      <option>01-02</option>
+                      <option>02-03</option>
+                      <option>03-04</option>
+                      <option>04-05</option>
+                      <option>05-06</option>
+                      <option>06-07</option>
+                      <option>07-08</option>
+                      <option>08-09</option>
+                      <option>09-10</option>
+                      <option>10-11</option>
+                      <option>11-12</option>
+                      <option>12-13</option>
+                      <option>13-14</option>
+                      <option>14-15</option>
+                      <option>15-16</option>
+                      <option>16-17</option>
+                      <option>17-18</option>
+                      <option>18-19</option>
+                      <option>19-20</option>
+                      <option>20-21</option>
+                      <option>21-22</option>
+                      <option>22-23</option>
+                      <option>23-24</option>
+                      <option>24-00</option>
+                      
+                    <option ng-repeat="role in roles" value="{{role.MP}}">{}}</option>
+              </select>
+            <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+            <button type="button" class="btn" ng-click="baru()">Cancel</button>
+        </div>
+    </form>
+</div>
 </html>
