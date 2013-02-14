@@ -40,12 +40,11 @@
     <form class="form-horizontal" name="formEdit">
         <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
             <label class="control-label" for="TU">Dari : &nbsp;</label>
-            <input type="datetime"
-                   name="TU" 
-                   placeholder="Dari" 
-                   ng-model="currentPermission.TU"
-                   required>
-            <span ng-show="formEdit.label.$error.required" class="help-inline">Harus diisi</span>
+             <input id="tgl" type="date" value="auto"  
+                   ng-model="currentHistory.tgl"
+                   required
+                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
+            <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
         </div>
         <div class="control-group" ng-class="{error: formEdit.value.$invalid}">
             <label class="control-label" for="MP">Sampai : &nbsp;</label>
