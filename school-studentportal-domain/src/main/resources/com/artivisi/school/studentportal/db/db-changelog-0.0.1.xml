@@ -110,6 +110,32 @@
                 <constraints nullable="false" />
             </column>
         </createTable>
+         <createTable tableName="student">
+            <column name="nis" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="nama" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="grade" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="religon" type="varchar(255)" >
+            <constraints nullable="false" />
+            </column>
+            <column name="sex" type="varchar(255)" >
+            <constraints nullable="false" />
+            </column>
+            <column name="bird" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="addres" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
         <modifySql dbms="mysql">
             <append value=" engine innodb" />
         </modifySql>
@@ -217,6 +243,16 @@
             <column header="jawab_yang_benar" type="BOOLEAN"/>
             <column header="kkm" type="STRING"/>
              <column header="hasil_ujian" type="STRING"/>
+        </loadData>
+          <loadData tableName="student" file="com/artivisi/school/studentportal/db/data/student.csv">
+            <column header="nis" type="STRING"/>
+            <column header="nama" type="STRING"/>
+            <column header="grade" type="STRING"/>
+            <column header="religon" type="STRING"/>
+            <column header="sex" type="BOOLEAN"/>
+            <column header="bird" type="STRING"/>
+             <column header="addres" type="STRING"/>
+             <column header="code" type="STRING"/>
         </loadData>
     </changeSet>
 </databaseChangeLog>
