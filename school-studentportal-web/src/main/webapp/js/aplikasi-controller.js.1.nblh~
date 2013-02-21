@@ -439,7 +439,7 @@ angular.module('belajar.controller',['belajar.service'])
         }
     }])
     .controller('AbsenController', ['$scope', 'AbsenService',  function($scope, AbsenService){
-        $scope.absens = AbsenService.query();
+        $scope.absens = Absenservice.query();
         $scope.edit = function(x){
             if(x.id == null){
                 return; 

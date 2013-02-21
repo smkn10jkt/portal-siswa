@@ -1,6 +1,5 @@
-<html>
 <button type="button" class="btn" data-toggle="collapse" data-target="#search">
-<i class="icon-search"></i>Search</button>
+<i class="icon-search"></i>Search
 <div id="search" class="collapse on">
 <div class="span5 well-large">
     <h1>Search</h1>
@@ -12,16 +11,13 @@
                    required
                    ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
             <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
-            <div class="form-actions"> 
-            <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+             <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
             <button type="button" class="btn" ng-click="baru()">Cancel</button>
- 
+    </form>
      </div>
         </div>
-           </form>
-
-                </div>
-                     </div>
+        </div>
+</button>
 
     
     <div class="span5 well-large">
@@ -55,4 +51,6 @@
     </table>
 
 </div>
+
+
 </html>

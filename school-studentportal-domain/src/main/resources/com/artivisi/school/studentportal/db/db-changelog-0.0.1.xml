@@ -1,3 +1,4 @@
+
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
@@ -87,6 +88,67 @@
                 <constraints nullable="false" />
             </column>
         </createTable>
+        <createTable tableName="m_jenis_peserta">
+            <column name="id" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="kode" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="nama" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable tableName="t_peserta">
+            <column name="id" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="nama" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="nomor" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="id_jenis_peserta" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable tableName="t_kehadiran">
+            <column name="id" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="tanggal" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="masuk" type="time">
+                <constraints nullable="false" />
+            </column>
+            <column name="pulang" type="time">
+                <constraints nullable="false" />
+            </column>
+            <column name="id_peserta" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable tableName="t_ketidakhadiran">
+            <column name="id" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="jenis_ketidakhadiran" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="keterangan" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="tanggal" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="id_peserta" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        
+        
         <modifySql dbms="mysql">
             <append value=" engine innodb" />
         </modifySql>
@@ -149,6 +211,27 @@
             referencedTableName="c_security_role"
             referencedColumnNames="id"
         />
+        <addForeignKeyConstraint
+           constraintName="fk_peserta_jenis_peserta"
+           baseColumnNames="id_jenis_peserta"
+           baseTableName="t_peserta"
+           referencedTableName="m_jenis_peserta"
+           referencedColumnNames="id"
+           />
+        <addForeignKeyConstraint
+           constraintName="fk_kehadiran_id_peserta"
+           baseColumnNames="id_peserta"
+           baseTableName="t_kehadiran"
+           referencedTableName="t_peserta"
+           referencedColumnNames="id"
+           />
+        <addForeignKeyConstraint
+           constraintName="fk_ketidakhadiran_id_peserta"
+           baseColumnNames="id_peserta"
+           baseTableName="t_ketidakhadiran"
+           referencedTableName="t_peserta"
+           referencedColumnNames="id"
+           />
     </changeSet>
     <changeSet id="3" author="endy">
         <loadData tableName="c_security_menu" file="com/artivisi/school/studentportal/db/data/menu.csv">
@@ -185,6 +268,13 @@
             <column header="password" type="STRING"/>
             <column header="active" type="BOOLEAN"/>
             <column header="id_role" type="STRING"/>
+        </loadData>
+        <loadData tableName="t_kehadiran" file="com/artivisi/school/studentportal/db/data/absen.csv">
+            <column header="id" type="STRING"/>
+            <column header="tanggal" type="DATE"/>
+            <column header="masuk" type="TIME"/>
+            <column header="pulang" type="TIME"/>
+            <column header="id_peserta" type="STRING"/>
         </loadData>
     </changeSet>
 </databaseChangeLog>

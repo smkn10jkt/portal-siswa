@@ -128,10 +128,10 @@ angular.module('belajar.service', ['ngResource'])
     .factory('AbsenService', ['$resource', '$http', function($resource, $http){
         var service = {
             absen: $resource('history/HistoryAbsensi/:id', {}, {
-            queryPage: {method:'GET', isArray: false}
+                queryPage: {method:'GET', isArray: false}
             }),
             get: function(param, callback){ return this.absen.get(param, callback) }, 
-            query: function(p, callback){ return this.absen.queryPage({"page.page": p, "page.size": 10}, callback) },
+            query: function(){ return this.absen.query() },
             save: function(obj){
                 if(obj.id == null){
                     return $http.post('history/HistoryAbsensi', obj);

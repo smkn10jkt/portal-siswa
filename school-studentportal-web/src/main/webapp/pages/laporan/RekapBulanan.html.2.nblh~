@@ -1,4 +1,3 @@
-<html>
 <button type="button" class="btn" data-toggle="collapse" data-target="#search">
 <i class="icon-search"></i>Search</button>
 <div id="search" class="collapse on">
@@ -55,4 +54,6 @@
     </table>
 
 </div>
+
+
 </html>

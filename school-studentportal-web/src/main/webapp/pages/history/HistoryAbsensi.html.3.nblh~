@@ -1,4 +1,4 @@
-<div class="hero-unit span2">
+<div class="hero-unit span3">
     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
 <i class="icon-search"></i>Search
 </button>
@@ -21,28 +21,27 @@
 </div>
     </div>
 
-<div class="span5  well-large">
+<div class="span4  well-large">
     <h2>History Kehadiran</h2>
    
     <table class="table table-striped table-condensed table-bordered">
         <thead>
             <tr>
-                <th>Tanggal</th>
                 <th>Jam Masuk</th>
                 <th>Jam Pulang</th>
                 <th>Id Siswa</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="x in absens.content">
-                <td>{{x.tanggal}}</td>
-                <td>{{x.masuk}}</td>
-                <td>{{x.pulang}}</td>
-                <td>{{x.peserta.nomor}}</td>
-<!--                <td>
+            <tr ng-repeat="x in absens">
+                
+                <td>{{h.masuk}}</td>
+                <td>{{h.pulang}}</td>
+                <td>{{h.peserta.nomor}}</td>
+                <td>
                     <a ng-click="edit(x)"><i class="icon-edit"></i></a>
                     <a ng-click="remove(x)"><i class="icon-remove"></i></a>
-                </td>-->
+                </td>
             </tr>
         </tbody>
     </table>
@@ -61,14 +60,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="x in absens.content">
-                <td>{{x.tanggal}}</td>
-                <td>{{x.jenis_ketidakhadiran}}</td>
-                <td>{{x.keterangan}}</td>
-<!--                <td>
-                   <a ng-click="edit(x)"><i class="icon-edit"></i></a>
-                   <a ng-click="remove(x)"><i class="icon-remove"></i></a>
-                </td>-->
+            <tr ng-repeat="x in absens">
+                <td>{{h.tgl}}</td>
+                <td>{{h.keterangan}}</td>
+                <td>
+                    <a ng-click="edit(x)"><i class="icon-edit"></i></a>
+                    <a ng-click="remove(x)"><i class="icon-remove"></i></a>
+                </td>
             </tr>
         </tbody>
     </table>

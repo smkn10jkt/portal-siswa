@@ -1,8 +1,7 @@
 package com.artivisi.school.studentportal.service;
 
-import java.util.List;
-
 import com.artivisi.school.studentportal.domain.ApplicationConfig;
+import com.artivisi.school.studentportal.domain.HistoryAbsen;
 import com.artivisi.school.studentportal.domain.Menu;
 import com.artivisi.school.studentportal.domain.Permission;
 import com.artivisi.school.studentportal.domain.Role;
@@ -16,7 +15,7 @@ public interface BelajarRestfulService extends MonitoredService {
 	void save(ApplicationConfig ac);
 	void delete(ApplicationConfig ac);
 	ApplicationConfig findApplicationConfigById(String id);
-    Page<ApplicationConfig> findAllApplicationConfigs(Pageable pageable);
+        Page<ApplicationConfig> findAllApplicationConfigs(Pageable pageable);
 	Long countAllApplicationConfigs();
 	Long countApplicationConfigs(String search);
 	Page<ApplicationConfig> findApplicationConfigs(String search, Pageable pageable);
@@ -53,4 +52,17 @@ public interface BelajarRestfulService extends MonitoredService {
     User findUserByUsername(String username);
     Page<User> findAllUsers(Pageable pageable);
     Long countAllUsers();
+    
+    
+    //history
+    void save(HistoryAbsen absen);
+    void delete (HistoryAbsen absen);
+    HistoryAbsen findHistoryAbsenById(String id);
+    Page<HistoryAbsen> findAllHistoryAbsens(Pageable pageable);
+    Long countAllHistoryAbsens();
+    
+    
 }
+
+
+
