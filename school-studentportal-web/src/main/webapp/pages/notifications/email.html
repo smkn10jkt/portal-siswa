@@ -32,7 +32,26 @@
 <div class="span5 well-large">
     <h1>Form Email</h1>
     <form class="form-horizontal" name="formEdit">
-        <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
+       <div class="control-group" ng-class="{error: formEdit.kompetensi-keahlian.$invalid}">
+					<label class="control-label" for="kompetensi-keahlian">Mail Server : &nbsp;</label>
+					<select>
+						<option>Yahoo</option>
+						<option>Gmail</option>
+					</select>
+				</div>
+		
+		<div class="control-group" ng-class="{error: formEdit.label.$invalid}">
+            <label class="control-label" for="label">Port : &nbsp;</label>
+            <input type="text" id="label" 
+                   name="port" 
+                   placeholder="8080" 
+                   ng-model="currentEmail.port"
+                   required>
+            <span ng-show="formEdit.label.$error.required" class="help-inline">required</span>
+        </div>
+
+
+		<div class="control-group" ng-class="{error: formEdit.label.$invalid}">
             <label class="control-label" for="label">Send To : &nbsp;</label>
             <input type="text" id="label" 
                    name="name" 
@@ -41,7 +60,7 @@
                    required>
             <span ng-show="formEdit.label.$error.required" class="help-inline">required</span>
         </div>
-        
+		
         <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
             <label class="control-label" for="label">Message : &nbsp;</label>
             <textarea rows="3"> </textarea>

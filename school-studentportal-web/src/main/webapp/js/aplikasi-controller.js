@@ -438,17 +438,29 @@ angular.module('belajar.controller',['belajar.service'])
             return true;
         }
     }])
+<<<<<<< HEAD
     .controller('AbsenController', ['$scope', 'AbsenService',  function($scope, AbsenService){
         $scope.absens = AbsenService.query();
+=======
+
+.controller('NilaiController', ['$scope', 'NilaiService', 'RoleService', function($scope, NilaiService, RoleService){
+        $scope.nilais = NilaiService.query();
+        $scope.roles = RoleService.query();
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3
         $scope.edit = function(x){
             if(x.id == null){
                 return; 
             }
+<<<<<<< HEAD
             $scope.currentAbsen = AbsenService.get({id: x.id}, function(data){
+=======
+            $scope.currentUser = NilaiService.get({id: x.id}, function(data){
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3
                 $scope.original = angular.copy(data);
             });
         };
         $scope.baru = function(){
+<<<<<<< HEAD
             $scope.currentAbsen = null;
             $scope.original = null;
         }
@@ -456,6 +468,18 @@ angular.module('belajar.controller',['belajar.service'])
             AbsenService.save($scope.currentAbsen)
             .success(function(){
                 $scope.absens = AbsenService.query();
+=======
+            $scope.currentUser = null;
+            $scope.original = null;
+        }
+        $scope.simpan = function(){
+            if($scope.currentUser.active == null){
+                $scope.currentUser.active = false;
+            }
+            NilaiService.save($scope.currentUser)
+            .success(function(){
+                $scope.users = NilaiService.query();
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3
                 $scope.baru();
             });
         }
@@ -463,6 +487,7 @@ angular.module('belajar.controller',['belajar.service'])
             if(x.id == null){
                 return;
             }
+<<<<<<< HEAD
             AbsenService.remove(x).success(function(){
                 $scope.absens = AbsenService.query();
             });
@@ -472,3 +497,26 @@ angular.module('belajar.controller',['belajar.service'])
         }
     }])
 ;
+=======
+            NilaiService.remove(x).success(function(){
+                $scope.users = NilaiService.query();
+            });
+        }
+        $scope.isClean = function(){
+            return angular.equals($scope.original, $scope.currentUser);
+        }
+        $scope.isUsernameAvailable = function(value){
+            if($scope.currentUser != null && $scope.currentUser.id != null){
+                return true;
+            }
+            for(var i = 0; i < $scope.users.length; i++){
+                var u = $scope.users[i];
+                if(u.username === value){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }])
+;
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3

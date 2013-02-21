@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <button type="button" class="btn" data-toggle="collapse" data-target="#search">
 <i class="icon-search"></i>Search</button>
@@ -7,11 +8,25 @@
     <form class="form-horizontal" name="formEdit">
         <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
             <label class="control-label" for="TU">Periode : &nbsp;</label>
+=======
+ <div class="span5 well-large">
+     <button type="button" class="btn" data-toggle="collapse" data-target="#search">
+<i class="icon-search"></i>Search
+</button>
+    <div id="search" class="collapse on">
+    <h1>Search Rekap Absensi Bulanan</h1>
+    
+    <form class="form-horizontal" name="formEdit">
+        <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
+            <label class="control-label" for="TU">Periode : &nbsp;</label>
+            
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3
              <input id="tgl" type="date" value="auto"  
                    ng-model="currentHistory.tgl"
                    required
                    ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
             <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
+<<<<<<< HEAD
             <div class="form-actions"> 
             <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
             <button type="button" class="btn" ng-click="baru()">Cancel</button>
@@ -28,6 +43,18 @@
     <h1>Rekap Bulanan</h1>
     <hr>
     <table class="table table-striped table-condensed table-bordered">
+=======
+        </div>
+            <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+            <button type="button" class="btn" ng-click="baru()">Cancel</button>
+        </div>
+</div>
+
+    <div class="span5 well-large">
+     <h1>Rekap Absensi Bulanan</h1>
+     
+     <table class="table table-striped table-condensed table-bordered">
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3
         <thead>
             <tr>
                 <th>NIS</th>
@@ -53,6 +80,10 @@
             </tr>
         </tbody>
     </table>
+<<<<<<< HEAD
 
 </div>
 </html>
+=======
+ </div>
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3

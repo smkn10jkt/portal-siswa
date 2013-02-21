@@ -88,6 +88,7 @@
                 <constraints nullable="false" />
             </column>
         </createTable>
+<<<<<<< HEAD
         <createTable tableName="m_jenis_peserta">
             <column name="id" type="varchar(255)">
                 <constraints primaryKey="true" nullable="false" />
@@ -149,6 +150,57 @@
         </createTable>
         
         
+=======
+         <createTable tableName="h_nilai">
+            <column name="nomer_ujian" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="pertanyaan" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="durasi" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="jawaban_anda" type="varchar(255)" >
+            <constraints nullable="false" />
+            </column>
+            <column name="jawab_yang_benar" type="varchar(255)" >
+            <constraints nullable="false" />
+            </column>
+            <column name="kkm" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="hasil_ujian" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+         <createTable tableName="student">
+            <column name="nis" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="nama" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="grade" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="religon" type="varchar(255)" >
+            <constraints nullable="false" />
+            </column>
+            <column name="sex" type="varchar(255)" >
+            <constraints nullable="false" />
+            </column>
+            <column name="bird" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="addres" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3
         <modifySql dbms="mysql">
             <append value=" engine innodb" />
         </modifySql>
@@ -269,12 +321,33 @@
             <column header="active" type="BOOLEAN"/>
             <column header="id_role" type="STRING"/>
         </loadData>
+<<<<<<< HEAD
         <loadData tableName="t_kehadiran" file="com/artivisi/school/studentportal/db/data/absen.csv">
             <column header="id" type="STRING"/>
             <column header="tanggal" type="DATE"/>
             <column header="masuk" type="TIME"/>
             <column header="pulang" type="TIME"/>
             <column header="id_peserta" type="STRING"/>
+=======
+         <loadData tableName="h_nilai" file="com/artivisi/school/studentportal/db/data/hnilai.csv">
+            <column header="nomer_ujian" type="STRING"/>
+            <column header="pertanyaan" type="STRING"/>
+            <column header="durasi" type="STRING"/>
+            <column header="jawaban_anda" type="STRING"/>
+            <column header="jawab_yang_benar" type="BOOLEAN"/>
+            <column header="kkm" type="STRING"/>
+             <column header="hasil_ujian" type="STRING"/>
+        </loadData>
+          <loadData tableName="student" file="com/artivisi/school/studentportal/db/data/student.csv">
+            <column header="nis" type="STRING"/>
+            <column header="nama" type="STRING"/>
+            <column header="grade" type="STRING"/>
+            <column header="religon" type="STRING"/>
+            <column header="sex" type="BOOLEAN"/>
+            <column header="bird" type="STRING"/>
+             <column header="addres" type="STRING"/>
+             <column header="code" type="STRING"/>
+>>>>>>> 0a38385237ce7ba16734e75480ba0ccc62d5d8e3
         </loadData>
     </changeSet>
 </databaseChangeLog>
