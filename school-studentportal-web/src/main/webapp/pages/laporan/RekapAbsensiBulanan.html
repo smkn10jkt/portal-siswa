@@ -1,11 +1,29 @@
 <html>
- <div class="span8 well-large">
+ <div class="span5 well-large">
      <button type="button" class="btn" data-toggle="collapse" data-target="#search">
 <i class="icon-search"></i>Search
-</button>
-    <div id="search" class="collapse on">
+     </button>
+     <div id="search" class="collapse on">
+    <h1>Search Laporan Bulanan</h1>
+    <form class="form-horizontal" name="formEdit">
+        <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
+            <label class="control-label" for="TU">Periode : &nbsp;</label>
+             <input id="tgl" type="date" value="auto"  
+                   ng-model="currentHistory.tgl"
+                   required
+                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
+            <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
+            <div class="form-actions">
+            <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
+            <button type="button" class="btn" ng-click="baru()">Cancel</button>
+            </div>
+         </div>
+    </form>
+     </div>
+</div>
+    <div class="span8 well-large">
     <h1>Rekap Absensi Bulanan</h1>
-    <hr>
+
     <table class="table table-striped table-condensed table-bordered">
         <thead>
             <tr>
@@ -35,19 +53,5 @@
 
 </div>
 
-<div class="span5 well-large">
-    <h1>Search</h1>
-    <form class="form-horizontal" name="formEdit">
-        <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
-            <label class="control-label" for="TU">Periode : &nbsp;</label>
-             <input id="tgl" type="date" value="auto"  
-                   ng-model="currentHistory.tgl"
-                   required
-                   ui-validate="{permissionValueAvailable: isPermissionValueAvailable}"/>
-            <span ng-show="formEdit.tgl.$error.required" class="help-inline">Harus diisi</span>
-             <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Search</button>
-            <button type="button" class="btn" ng-click="baru()">Cancel</button>
-        </div>
-    </form>
-</div>
+
 </html>
