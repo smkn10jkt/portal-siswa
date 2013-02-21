@@ -438,4 +438,54 @@ angular.module('belajar.controller',['belajar.service'])
             return true;
         }
     }])
+
+.controller('NilaiController', ['$scope', 'NilaiService', 'RoleService', function($scope, NilaiService, RoleService){
+        $scope.nilais = NilaiService.query();
+        $scope.roles = RoleService.query();
+        $scope.edit = function(x){
+            if(x.id == null){
+                return; 
+            }
+            $scope.currentUser = NilaiService.get({id: x.id}, function(data){
+                $scope.original = angular.copy(data);
+            });
+        };
+        $scope.baru = function(){
+            $scope.currentUser = null;
+            $scope.original = null;
+        }
+        $scope.simpan = function(){
+            if($scope.currentUser.active == null){
+                $scope.currentUser.active = false;
+            }
+            NilaiService.save($scope.currentUser)
+            .success(function(){
+                $scope.users = NilaiService.query();
+                $scope.baru();
+            });
+        }
+        $scope.remove = function(x){
+            if(x.id == null){
+                return;
+            }
+            NilaiService.remove(x).success(function(){
+                $scope.users = NilaiService.query();
+            });
+        }
+        $scope.isClean = function(){
+            return angular.equals($scope.original, $scope.currentUser);
+        }
+        $scope.isUsernameAvailable = function(value){
+            if($scope.currentUser != null && $scope.currentUser.id != null){
+                return true;
+            }
+            for(var i = 0; i < $scope.users.length; i++){
+                var u = $scope.users[i];
+                if(u.username === value){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }])
 ;
