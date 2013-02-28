@@ -1,6 +1,6 @@
 package com.artivisi.school.studentportal.service.impl;
 
-import com.artivisi.school.studentportal.domain.HistoryAbsen;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.artivisi.school.studentportal.dao.ApplicationConfigDao;
-import com.artivisi.school.studentportal.dao.HistoryAbsenDao;
+
 import com.artivisi.school.studentportal.dao.MenuDao;
 import com.artivisi.school.studentportal.dao.PermissionDao;
 import com.artivisi.school.studentportal.dao.RoleDao;
@@ -40,9 +40,8 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
     private RoleDao roleDao;
     @Autowired
     private UserDao userDao;
-    //history
-    @Autowired
-    private HistoryAbsenDao absenDao;
+
+  
     
 
     @Override
@@ -281,31 +280,5 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
         return userDao.count();
     }
 
-    @Override
-    public void save(HistoryAbsen h) {
-        absenDao.save(h);
-    }
-
-    @Override
-    public void delete(HistoryAbsen h) {
-        absenDao.delete(h);
-    }
-
-    @Override
-    public HistoryAbsen findHistoryAbsenById(String id) {
-        if(!StringUtils.hasText(id)){
-            return null;
-        }
-        return absenDao.findOne(id);
-    }
-
-    @Override
-    public Page<HistoryAbsen> findAllHistoryAbsens(Pageable pageable) {
-        return absenDao.findAll(pageable);
-    }
-
-    @Override
-    public Long countAllHistoryAbsens() {
-        return absenDao.count();
-    }
+  
 }

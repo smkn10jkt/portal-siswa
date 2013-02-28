@@ -1,7 +1,6 @@
 package com.artivisi.school.studentportal.service;
 
 import com.artivisi.school.studentportal.domain.ApplicationConfig;
-import com.artivisi.school.studentportal.domain.HistoryAbsen;
 import com.artivisi.school.studentportal.domain.Menu;
 import com.artivisi.school.studentportal.domain.Permission;
 import com.artivisi.school.studentportal.domain.Role;
@@ -55,11 +54,7 @@ public interface BelajarRestfulService extends MonitoredService {
     
     
     //history
-    void save(HistoryAbsen absen);
-    void delete (HistoryAbsen absen);
-    HistoryAbsen findHistoryAbsenById(String id);
-    Page<HistoryAbsen> findAllHistoryAbsens(Pageable pageable);
-    Long countAllHistoryAbsens();
+  
     
     
 }

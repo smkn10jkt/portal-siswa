@@ -21,7 +21,7 @@ angular.module('belajar', ['ui', 'belajar.controller'])
             .when('/laporan/RekapAbsensiHarian', {templateUrl: 'pages/laporan/RekapAbsensiHarian.html'})
             .when('/laporan/RekapAbsensiBulanan', {templateUrl: 'pages/laporan/RekapAbsensiBulanan.html'})
             .when('/laporan/RekapAbsensiTahunan', {templateUrl: 'pages/laporan/RekapAbsensiTahunan.html'})
-            .when('/history/editsiswa', {templateUrl: 'pages/history/editsiswa.html'})
+           
             .when('/list/school', {templateUrl: 'pages/list/school.html'})
             .when('/about', {templateUrl: 'pages/about.html', controller: 'AboutController'})
             .otherwise({templateUrl: 'pages/404.html'});
